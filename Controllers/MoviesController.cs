@@ -1,20 +1,20 @@
-﻿using FilmesAPI.Entities;
+﻿using Movies.Entities;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace FilmesAPI.Controllers
+namespace Movies.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class FilmesController : ControllerBase
+    public class MoviesController : ControllerBase
     {
         [HttpPost]
-        public ActionResult<Filme> AdicionarFilme([FromBody] Filme filme)
+        public ActionResult<Movie> AddMovie([FromBody] Movie movie)
         {
-            return Ok(filme);
+            return Ok(movie);
         }   
     }
 }
