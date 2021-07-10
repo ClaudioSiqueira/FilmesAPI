@@ -14,6 +14,14 @@ namespace Movies.Controllers
         [HttpPost]
         public ActionResult<Movie> AddMovie([FromBody] Movie movie)
         {
+            var validator = new MovieValidator();
+            var result = validator.Validate(movie);
+
+            if (!result.IsValid)
+            {
+                return BadRequest(result.Errors);
+            }
+
             return Ok(movie);
         }   
     }
